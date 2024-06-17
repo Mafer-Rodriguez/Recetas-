@@ -1,0 +1,108 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.App {
+  text-align: center;
+  background-color: #fff;
+  color: #333;
+  transition: all 0.3s ease-in-out;
+}
+
+.App.dark {
+  background-color: #2e2e2e;
+  color: #fff;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #f04e30;
+  color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header.dark {
+  background-color: #d94330;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+nav li {
+  margin: 0 15px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+nav li:hover {
+  color: #ffd700;
+}
+
+button {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #f08a30;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #e67e22;
+}
+
+main {
+  padding: 40px 20px;
+}
+
+main img {
+  max-width: 75%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.reviews {
+  margin-top: 40px;
+  text-align: left;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reviews h2 {
+  color: #f04e30;
+}
+
+.reviews p {
+  font-style: italic;
+  background-color: #f8f8f8;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+footer {
+  padding: 20px;
+  background-color: #f04e30;
+  color: #fff;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+  margin: 0;
+}
