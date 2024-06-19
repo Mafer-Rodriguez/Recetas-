@@ -86,7 +86,41 @@ const Postres = () => {
         );
     };
 
-    return cargarPostres();
-};
+    const estadoTitulo = document.createElement('h3');
+    estadoTitulo.textContent = 'Estado:';
+    postreDiv.appendChild(estadoTitulo);
+
+    const estado = document.createElement('p');
+    estado.textContent = postre.Estado;
+    postreDiv.appendChild(estado);
+
+    const botonesDiv = document.createElement('div');
+    botonesDiv.className = 'botones';
+
+    const btnYaLoHice = document.createElement('button');
+    btnYaLoHice.textContent = 'Ya lo hice';
+    btnYaLoHice.onclick = () => cambiarEstado(postre, 'Ya lo hice');
+    botonesDiv.appendChild(btnYaLoHice);
+
+    const btnPendiente = document.createElement('button');
+    btnPendiente.textContent = 'Pendiente';
+    btnPendiente.onclick = () => cambiarEstado(postre, 'Pendiente');
+    botonesDiv.appendChild(btnPendiente);
+
+    const btnPorHacer = document.createElement('button');
+    btnPorHacer.textContent = 'Por hacer';
+    btnPorHacer.onclick = () => cambiarEstado(postre, 'Por hacer');
+    botonesDiv.appendChild(btnPorHacer);
+
+    postreDiv.appendChild(botonesDiv);
+
+    container.appendChild(postreDiv);
+}
+
+document.addEventListener('DOMContentLoaded', cargarPostres);
+
+
+
+
 
 export default Postres;

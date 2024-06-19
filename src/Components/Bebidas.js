@@ -82,4 +82,6 @@ const Bebidas = () => {
     );
 };
 
+
+
 export default Bebidas;
