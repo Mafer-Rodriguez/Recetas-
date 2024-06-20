@@ -1,7 +1,8 @@
 
+/* Estilos para Bebidas */
 #cuadro-bebidas {
     background-color: #db9a46;
-    color: rgb(253, 252, 252);
+    color: #fdfcfc;
     padding: 20px;
     text-align: center;
     border-radius: 8px;
@@ -53,12 +54,10 @@
     margin-bottom: 5px;
 }
 
-
-
-
+/* Estilos para Postres */
 #cuadro-postres {
     background-color: #ea7869;
-    color: rgb(253, 252, 252);
+    color: #fdfcfc;
     padding: 20px;
     text-align: center;
     border-radius: 8px;
@@ -110,10 +109,10 @@
     margin-bottom: 5px;
 }
 
-
+/* Estilos para Entradas */
 #cuadro-entrada {
     background-color: #5d6367;
-    color: rgb(253, 252, 252);
+    color: #fdfcfc;
     padding: 20px;
     text-align: center;
     border-radius: 8px;
@@ -163,4 +162,14 @@
 
 .entrada ul li {
     margin-bottom: 5px;
+}
+
+/* Estilos para Botones */
+.boton-estado {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
 }

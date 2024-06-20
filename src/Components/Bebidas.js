@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+
+import React, { useState, useEffect } from 'react';
 import './Styles.css'; // Asegúrate de tener tus estilos CSS importados correctamente
 
-const bebidas = [
+const bebidasIniciales = [
     {
         nombre: "Agua de Mazapan",
         imagen: "https://d1uz88p17r663j.cloudfront.net/original/1ef4694bb435518ca55b0f6a05005963_AGUA_DE_MAZAPAN_CON_FRESA.jpg",
@@ -13,7 +14,8 @@ const bebidas = [
             "150 ml de leche condensada",
             "Hielo"
         ],
-        instrucciones: "Desenvuelve los mazapanes y colócalos en la licuadora.  Agrega el agua y procesa hasta formar un batido uniforme.  Añade la leche entera y la leche evaporada, procesando nuevamenteRectifica el dulzor y, si es necesario, agrega leche condensada al gusto.  Sirve muy fría en vasos con hielo y, opcionalmente, una pizca de canela en polvo."
+        instrucciones: "Desenvuelve los mazapanes y colócalos en la licuadora. Agrega el agua y procesa hasta formar un batido uniforme. Añade la leche entera y la leche evaporada, procesando nuevamente. Rectifica el dulzor y, si es necesario, agrega leche condensada al gusto. Sirve muy fría en vasos con hielo y, opcionalmente, una pizca de canela en polvo.",
+        estado: "Por hacer"
     },
     {
         nombre: "Piña Colada",
@@ -24,7 +26,8 @@ const bebidas = [
             "3/4 onza de jarabe de azúcar",
             "Rodaja de lima para decorar"
         ],
-        instrucciones: "Llena una coctelera con hielo, añade ron, jugo de lima y jarabe de azúcar. Agita bien y cuela en una copa de cóctel. Decora con una rodaja de lima."
+        instrucciones: "Llena una coctelera con hielo, añade ron, jugo de lima y jarabe de azúcar. Agita bien y cuela en una copa de cóctel. Decora con una rodaja de lima.",
+        estado: "Por hacer"
     },
     {
         nombre: "Smoothie de Mango",
@@ -36,7 +39,8 @@ const bebidas = [
             "1/2 taza de jugo de naranja",
             "1/2 taza de hielo"
         ],
-        instrucciones: "Coloca todos los ingredientes en una licuadora y mezcla hasta que quede suave. Sirve inmediatamente."
+        instrucciones: "Coloca todos los ingredientes en una licuadora y mezcla hasta que quede suave. Sirve inmediatamente.",
+        estado: "Por hacer"
     },
     {
         nombre: "Limonada de Fresa",
@@ -49,11 +53,20 @@ const bebidas = [
             "Hielo",
             "Rodajas de limón para decorar"
         ],
-        instrucciones: "En una licuadora, mezcla las fresas y el jugo de limón hasta que esté suave. En una jarra grande, combina la mezcla de fresas, agua y azúcar. Revuelve bien hasta que el azúcar se disuelva. Sirve con hielo y decora con rodajas de limón."
-    },
+        instrucciones: "En una licuadora, mezcla las fresas y el jugo de limón hasta que esté suave. En una jarra grande, combina la mezcla de fresas, agua y azúcar. Revuelve bien hasta que el azúcar se disuelva. Sirve con hielo y decora con rodajas de limón.",
+        estado: "Por hacer"
+    }
 ];
 
 const Bebidas = () => {
+    const [bebidas, setBebidas] = useState(bebidasIniciales);
+
+    const cambiarEstado = (index, nuevoEstado) => {
+        const nuevasBebidas = [...bebidas];
+        nuevasBebidas[index].estado = nuevoEstado;
+        setBebidas(nuevasBebidas);
+    };
+
     useEffect(() => {
         // Aquí puedes agregar lógica para acciones que ocurren después del renderizado inicial
     }, []);
@@ -76,12 +89,17 @@ const Bebidas = () => {
                             <li key={i}>{instruccion}</li>
                         ))}
                     </ul>
+                    <h3>Estado:</h3>
+                    <p>{bebida.estado}</p>
+                    <div className="botones">
+                        <button onClick={() => cambiarEstado(index, 'Ya lo hice')}>Ya lo hice</button>
+                        <button onClick={() => cambiarEstado(index, 'Pendiente')}>Pendiente</button>
+                        <button onClick={() => cambiarEstado(index, 'Por hacer')}>Por hacer</button>
+                    </div>
                 </div>
             ))}
         </div>
     );
 };
-
-
 
 export default Bebidas;
